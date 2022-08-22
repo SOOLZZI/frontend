@@ -12,6 +12,14 @@ div{
   text-align: left;
   border-bottom: 1px solid grey;
 }
+.grid{
+  display: grid;
+  grid-template-columns: repeat(4, auto);
+  grid-gap: 1rem;
+  list-style: none;
+  margin: 0rem 1rem 0rem auto;
+  align-items: center;
+}
 .modal{
   margin-top: 20px;
   padding: 20px;
