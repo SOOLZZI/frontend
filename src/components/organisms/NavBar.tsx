@@ -1,9 +1,8 @@
 import React, { useState } from "react";
-import { TiThMenuOutline } from "react-icons/ti";
 import { Link } from "react-router-dom";
 import "../../App.css";
-
-
+import Logo from "../atom/Logo";
+import DropDown from "../atom/DropDown";
 
 // const StyledLink = styled.div`
 //   color: white;
@@ -17,15 +16,16 @@ import "../../App.css";
 //   }
 // `;
 
-
 function NavBar() {
   return (
-    <div className="bg-[#74bb41] flex items-center justify-between text-2xl
-    font-bold h-16 border-solid">
-      <div className="text-white ml-12 cursor-pointer">SOOLZZI</div>
-      <div className="text-white grid grid-cols-2 gap-4 items-center list-none mr-1">
-      <div>로그인</div>
-        <TiThMenuOutline className="mr-5" size="30"/>
+    <div
+      className="bg-[#74bb41] flex items-center justify-between text-2xl
+    font-bold h-16 border-solid"
+    >
+      <Logo />
+      <div className="text-white grid grid-cols-2 gap-4 items-center list-none m-0 hover:text-gray">
+        <div>로그인</div>
+        <DropDown />
       </div>
     </div>
   );
