@@ -1,15 +1,13 @@
-import { TiThMenuOutline } from "react-icons/ti";
+import { IoIosArrowDown } from "react-icons/io";
+import { IoIosArrowUp } from "react-icons/io";
+import Input from "./Input";
+import React,{useState} from "react";
 
-function DropDown(){
-    return(
-        <TiThMenuOutline className="mr-5" size="30"/>
-    )
+function DropDown() {
+  return (
+    <div className="">
+      
+    </div>
+  );
 }
 export default DropDown;
-
-
-
-
-
-
-

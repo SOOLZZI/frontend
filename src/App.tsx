@@ -3,20 +3,20 @@ import React, { useState } from "react";
 import "./App.css";
 import "tailwindcss/tailwind.css";
 import NavBar from "./components/organisms/NavBar";
-import Searchbar from "./components/molecule/Searchbar";
-import Display from './components/atom/Display';
-
-
+import Display from "./components/atom/Display";
+import Button from "./components/atom/Button";
+import DropDown from "./components/atom/DropDown";
+import Review from "./components/organisms/Review";
+import OrderBar from "./components/organisms/OrderBar";
 function App() {
   return (
     <div className="App">
       <NavBar></NavBar>
-      <Searchbar type="search" placeholder="주류를 검색해보세요!"></Searchbar>
-      <div className="grid">
-        <Display/>
-        <Display/>
-      </div>
-     
+      <DropDown />
+      <Button type="button">입력</Button>
+      <Review></Review>
+
+      <OrderBar/>
     </div>
   );
 }

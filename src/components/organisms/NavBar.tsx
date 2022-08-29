@@ -3,6 +3,8 @@ import { Link } from "react-router-dom";
 import "../../App.css";
 import Logo from "../atom/Logo";
 import DropDown from "../atom/DropDown";
+import Searchbar from "../molecule/Searchbar";
+import { TiThMenuOutline } from "react-icons/ti";
 
 // const StyledLink = styled.div`
 //   color: white;
@@ -23,9 +25,11 @@ function NavBar() {
     font-bold h-16 border-solid"
     >
       <Logo />
+      <Searchbar/>
       <div className="text-white grid grid-cols-2 gap-4 items-center list-none m-0 hover:text-gray">
         <div>로그인</div>
-        <DropDown />
+        <TiThMenuOutline className="mr-5" size="30"/>
+
       </div>
     </div>
   );
