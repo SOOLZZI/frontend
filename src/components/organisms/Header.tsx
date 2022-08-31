@@ -18,21 +18,20 @@ import { TiThMenuOutline } from "react-icons/ti";
 //   }
 // `;
 
-function NavBar() {
+function Header() {
   return (
     <div
       className="bg-[#74bb41] flex items-center justify-between text-2xl
     font-bold h-16 border-solid"
     >
       <Logo />
-      <Searchbar/>
-      <div className="text-white grid grid-cols-2 gap-4 items-center list-none m-0 hover:text-gray">
+      <Searchbar />
+      <div className="text-2xl text-white grid grid-cols-2 gap-4 items-center list-none m-0 hover:text-gray">
         <div>로그인</div>
-        <TiThMenuOutline className="mr-5" size="30"/>
-
+        <TiThMenuOutline className="mr-5" size="30" />
       </div>
     </div>
   );
 }
 
-export default NavBar;
+export default Header;

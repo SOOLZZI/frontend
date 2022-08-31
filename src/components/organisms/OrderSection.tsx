@@ -3,7 +3,7 @@ import Button from "../atom/Button";
 import { HiPlusSm } from "react-icons/hi";
 import { HiMinusSm } from "react-icons/hi";
 
-function OrderBar() {
+function OrderSection() {
   const [Num, setNum] = useState(1);
   return (
     <div className="grid gap-2 grid-rows-6 grid-cols-1 text-lg font-semibold w-80 border px-5 rounded-lg">
@@ -32,4 +32,4 @@ function OrderBar() {
   );
 }
 
-export default OrderBar;
+export default OrderSection;
