@@ -6,7 +6,7 @@ import { HiMinusSm } from "react-icons/hi";
 function OrderBar() {
   const [Num, setNum] = useState(1);
   return (
-    <div className="w-1/3 grid grid-rows-6 grid-cols-1">
+    <div className="grid grid-rows-6 grid-cols-1">
       <h1>수량</h1>
       <div className="flex justify-between items-center">
         <HiPlusSm
