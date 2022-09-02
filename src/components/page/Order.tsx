@@ -1,10 +1,10 @@
 import React, { SetStateAction } from "react";
-import "../../App.css";
 import Display from "../atom/Display";
 import RatingSection from "../atom/RatingSection";
 import OrderSection from "../organisms/OrderSection";
-import AlcoholTitle from "../atom/AlcoholTitle";
+import AlcoholTitle from "../atom/Title";
 import Elements from "../atom/Elements";
+
 function OrderPage() {
   return (
     <div className="flex justify-around">
@@ -13,8 +13,7 @@ function OrderPage() {
           <Display />
         </div>
         <div className="mt-20 ml-20 gap-0 h-60 grid grid-cols-1 ">
-          
-          <div className=''>
+          <div className="">
             <AlcoholTitle>주류이름</AlcoholTitle>
             <RatingSection
               ratingIndex={3}
@@ -37,7 +36,6 @@ function OrderPage() {
       <div className="ml-20 mt-20">
         <OrderSection />
       </div>
-
     </div>
   );
 }
