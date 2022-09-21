@@ -16,7 +16,6 @@ div{
   color: gray;
 }
 .active {
-  color: yellow;
 }
 .grid{
   display: grid;
@@ -57,6 +56,7 @@ div{
 .App-link {
   color: #61dafb;
 }
+
 
 @keyframes App-logo-spin {
   from {

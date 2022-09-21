@@ -4,7 +4,7 @@ import { HiSearch } from "react-icons/hi";
 function Searchbar(props: any) {
   return (
     <div
-      className="bg-[#74bb41] grid
+      className="grid
      justify-center justify-items-center gap-2 m-0 p-3"
     >
       <input className='rounded-2xl w-80 p-2 

@@ -7,6 +7,7 @@ import { BrowserRouter, Route, Routes, Navigate } from "react-router-dom";
 import Order from "./components/page/Order";
 import Login from './components/page/Login';
 import SignUp from './components/page/SignUp';
+import AlcoholSearch from './components/page/AlcoholSearch';
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
           <Route path='/Order' element={<Order/>}/>
           <Route path='/Login' element={<Login/>}/>
           <Route path='/SignUp' element={<SignUp/>}/>
+          <Route path='/AlcoholSearch' element={<AlcoholSearch/>}/>
         </Routes>
       </BrowserRouter>
     </div>
