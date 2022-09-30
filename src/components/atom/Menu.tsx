@@ -39,7 +39,7 @@ const Menu: React.FC = (): JSX.Element => {
 
   return (
     <>
-      <div className="border-b border-solid"></div>
+      <div className=""></div>
       <button
         className={showDropDown ? "active" : undefined}
         onClick={(): void => toggleDropDown()}
@@ -47,7 +47,7 @@ const Menu: React.FC = (): JSX.Element => {
           dismissHandler(e)
         }
       >
-        <div className="border p-2 rounded-lg">
+        <div className="border-b border-solid border p-2 rounded-lg">
           {select ? "알코올 도수: " + select : "알코올 도수"}{" "}
         </div>
         {showDropDown && (
