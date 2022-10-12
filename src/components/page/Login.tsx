@@ -115,8 +115,8 @@ function LoginPage() {
           <Elements>Password</Elements>
           <Input type="password" onChange={onChangePassword}></Input>
         </div>
-      </form>
       <Button>로그인</Button>
+      </form>
 
       <Link to="/SignUp" className="text-gray-500 underline font-semibold mt-0">
         회원가입

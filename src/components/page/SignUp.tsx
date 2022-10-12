@@ -23,7 +23,7 @@ function SignUpPage() {
 
   const postSignup = (ev: any) => {
     ev.preventDefault();
-
+    console.log("되냐?")
     if (inputs["accountId"] === "") {
       window.alert("아이디를 입력해주세요.");
       return;
@@ -45,7 +45,7 @@ function SignUpPage() {
     }
 
     axios({
-      url: "/api/user",
+      url: "api/user",
       method: "post",
       data: {
         accountId: inputs["accountId"],
@@ -55,15 +55,13 @@ function SignUpPage() {
         nickname: inputs["nickname"],
         age: inputs["age"],
       },
-    })
-      .then((res) => {
+    }).then((res) => {
         window.alert("회원가입 완료 !");
         return navigate("/Login");
-      })
-      .catch((error) => {
+      }).catch((error) => {
         if (error.response.status === 400) {
           window.alert(
-            "같은 이메일이 존재합니다. 다른 이메일을 입력해주십시오."
+            "이미 존재하는 아이디 입니다."
           );
           return;
         }
@@ -128,32 +126,30 @@ function SignUpPage() {
       <form onSubmit={postSignup}>
         <div>
           <Elements>아이디</Elements>
-          <Input></Input>
+          <Input type="text" onChange={(e:any) => setInputs({...inputs,"accountId":e.target.value})}></Input>
         </div>
         <div>
           <Elements>비밀번호</Elements>
-          <Input type="password"></Input>
+          <Input type="password" onChange={(e:any) => setInputs({...inputs,"password":e.target.value})}></Input>
         </div>
         <div>
           <Elements>이메일</Elements>
-          <Input type="email"></Input>
+          <Input type="email" onChange={(e:any) => setInputs({...inputs,"email":e.target.value})}></Input>
         </div>
         <div>
           <Elements>이름</Elements>
-          <Input></Input>
+          <Input type="text" onChange={(e:any) => setInputs({...inputs,"name":e.target.value})}></Input>
         </div>
         <div>
           <Elements>닉네임</Elements>
-          <Input></Input>
+          <Input type="text" onChange={(e:any) => setInputs({...inputs,"nickname":e.target.value})}></Input>
         </div>
         <div>
           <Elements>나이</Elements>
-          <Input></Input>
+          <Input type="number" onChange={(e:any) => setInputs({...inputs,"age":e.target.value})}></Input>
         </div>
+        <Button onClick={postSignup}>회원가입</Button>
       </form>
-      <Link to="/Login">
-        <Button>회원가입</Button>
-      </Link>
 
       <div className="grid grid-rows-2 grid-cols-2 gap-0 justify-items-center ml-16">
         <Button
