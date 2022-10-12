@@ -8,6 +8,10 @@ import Order from "./components/page/Order";
 import Login from './components/page/Login';
 import SignUp from './components/page/SignUp';
 import AlcoholSearch from './components/page/AlcoholSearch';
+import axios from "axios";
+
+axios.defaults.baseURL="http://localhost:8080/";
+axios.defaults.withCredentials=true;
 
 function App() {
   return (
