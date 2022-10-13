@@ -23,7 +23,7 @@ function SignUpPage() {
 
   const postSignup = (ev: any) => {
     ev.preventDefault();
-    console.log("되냐?")
+    
     if (inputs["accountId"] === "") {
       window.alert("아이디를 입력해주세요.");
       return;
@@ -45,7 +45,7 @@ function SignUpPage() {
     }
 
     axios({
-      url: "api/user",
+      url: "/api/user",
       method: "post",
       data: {
         accountId: inputs["accountId"],
@@ -54,15 +54,13 @@ function SignUpPage() {
         name: inputs["name"],
         nickname: inputs["nickname"],
         age: inputs["age"],
-      },
-    }).then((res) => {
+      }
+    }).then((res:any) => {
         window.alert("회원가입 완료 !");
         return navigate("/Login");
-      }).catch((error) => {
+      }).catch((error:any) => {
         if (error.response.status === 400) {
-          window.alert(
-            "이미 존재하는 아이디 입니다."
-          );
+          window.alert("이미 존재하는 아이디 입니다.");
           return;
         }
       });
@@ -73,10 +71,10 @@ function SignUpPage() {
       url: "api/oauth2/kakao",
       method: "get",
     })
-      .then((response) => {
-        console.log(response);
+      .then((res:any) => {
+        console.log(res);
       })
-      .catch((error) => {
+      .catch((error:any) => {
         console.log("error: ", error);
         window.alert("로그인에 실패하였습니다.");
       });
@@ -86,10 +84,10 @@ function SignUpPage() {
       url: "api/oauth2/naver",
       method: "get",
     })
-      .then((response) => {
+      .then((response:any) => {
         console.log(response);
       })
-      .catch((error) => {
+      .catch((error:any) => {
         console.log("error: ", error);
         window.alert("로그인에 실패하였습니다.");
       });
@@ -99,10 +97,10 @@ function SignUpPage() {
       url: "api/oauth2/google",
       method: "get",
     })
-      .then((response) => {
+      .then((response:any) => {
         console.log(response);
       })
-      .catch((error) => {
+      .catch((error:any) => {
         console.log("error: ", error);
         window.alert("로그인에 실패하였습니다.");
       });
@@ -112,10 +110,10 @@ function SignUpPage() {
       url: "api/oauth2/github",
       method: "get",
     })
-      .then((response) => {
+      .then((response:any) => {
         console.log(response);
       })
-      .catch((error) => {
+      .catch((error:any) => {
         console.log("error: ", error);
         window.alert("로그인에 실패하였습니다.");
       });

@@ -42,9 +42,13 @@ function LoginPage() {
         password: inputs["password"],
       },
     })
-      .then((response) => {})
-      .catch((error) => {
-        if (error.response.status === 401) {
+      .then((response:any) => {
+        console.log(inputs["accountId"]+" 님 로그인 성공");
+        window.alert("로그인 성공!");
+        console.log(response);
+      })
+      .catch((error:any) => {
+        if (error.response.status === 500) {
           window.alert("아이디와 비밀번호를 확인해주십시오.");
           return;
         }
@@ -55,10 +59,10 @@ function LoginPage() {
       url: "api/oauth2/kakao",
       method: "get",
     })
-      .then((response) => {
+      .then((response:any) => {
         console.log(response);
       })
-      .catch((error) => {
+      .catch((error:any) => {
         console.log("error: ", error);
         window.alert("로그인에 실패하였습니다.");
       });
@@ -68,10 +72,10 @@ function LoginPage() {
       url: "api/oauth2/naver",
       method: "get",
     })
-      .then((response) => {
+      .then((response:any) => {
         console.log(response);
       })
-      .catch((error) => {
+      .catch((error:any) => {
         console.log("error: ", error);
         window.alert("로그인에 실패하였습니다.");
       });
@@ -81,10 +85,10 @@ function LoginPage() {
       url: "api/oauth2/google",
       method: "get",
     })
-      .then((response) => {
+      .then((response:any) => {
         console.log(response);
       })
-      .catch((error) => {
+      .catch((error:any) => {
         console.log("error: ", error);
         window.alert("로그인에 실패하였습니다.");
       });
@@ -94,10 +98,10 @@ function LoginPage() {
       url: "api/oauth2/github",
       method: "get",
     })
-      .then((response) => {
+      .then((response:any) => {
         console.log(response);
       })
-      .catch((error) => {
+      .catch((error:any) => {
         console.log("error: ", error);
         window.alert("로그인에 실패하였습니다.");
       });
@@ -115,7 +119,7 @@ function LoginPage() {
           <Elements>Password</Elements>
           <Input type="password" onChange={onChangePassword}></Input>
         </div>
-      <Button>로그인</Button>
+      <Button onClick={postLogin}>로그인</Button>
       </form>
 
       <Link to="/SignUp" className="text-gray-500 underline font-semibold mt-0">
