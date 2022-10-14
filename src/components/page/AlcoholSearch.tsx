@@ -1,15 +1,35 @@
-import React, { SetStateAction } from "react";
-import Display from "../atom/Display";
-import RatingSection from "../atom/RatingSection";
-import OrderSection from "../organisms/OrderSection";
-import AlcoholTitle from "../atom/Title";
-import Elements from "../atom/Elements";
-import Searchbar from "../molecule/Searchbar";
+import axios from "axios";
+import { useEffect, useState } from "react";
 import { HiSearch } from "react-icons/hi";
-import Menu from "../atom/Menu";
+import Display from "../atom/Display";
 import HorizonLine from "../atom/HorizonLine";
+import Menu from "../atom/Menu";
+import SlimAlcoholInfo from "../atom/SlimAlcoholInfo";
 
 function AlcoholSearchPage() {
+  const [alcoholList, setAlcoholList]=useState([] as any);
+
+  const getAllAlcohol=(page:number,size:number)=>{
+    console.log("get alcohol list")
+    axios({
+      url: "api/alcohol",
+      method: "get",
+      params: {
+        page: page, // 페이징
+        size: size,
+      }
+    }).then((res:any)=>{
+      console.log(res.data);
+      return res.data
+    });
+  }
+
+  useEffect(()=>{
+    const result = getAllAlcohol(0,20)
+    console.log(result)
+    setAlcoholList(result)
+  })
+
   return (
     <div className="">
       <div className="flex justify-center mt-10">
@@ -29,10 +49,13 @@ function AlcoholSearchPage() {
       </div>
       <HorizonLine />
       <div className="w-100">
+        {alcoholList}
         <Display />
         <Display />
         <Display />
       </div>
+      
+      
     </div>
   );
 }

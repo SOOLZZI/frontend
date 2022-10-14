@@ -4,8 +4,19 @@ import RatingSection from "../atom/RatingSection";
 import OrderSection from "../organisms/OrderSection";
 import AlcoholTitle from "../atom/Title";
 import Elements from "../atom/Elements";
+import axios from "axios";
 
 function OrderPage() {
+
+  const getAlcoholInfo=(event:any,alcoholId:number)=>{
+    axios({
+      url: "api/alcohol/"+alcoholId,
+      method: "get",
+    }).then((res:any)=>{
+      console.log(res.data);
+    })
+  }
+
   return (
     <div className="flex justify-around">
       <div className="flex">
