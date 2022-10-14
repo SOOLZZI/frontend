@@ -20,13 +20,22 @@ function AlcoholSearchPage() {
       }
     }).then((res:any)=>{
       console.log(res.data);
-      return res.data
+      const result=[]
+
+      for(let i=0; i<res.data.size; i++){
+        result.push(
+          <SlimAlcoholInfo alcohol={res.data[i]}>
+          </SlimAlcoholInfo>
+        )
+      }
+      
+      console.log(result)
+      return result
     });
   }
 
   useEffect(()=>{
     const result = getAllAlcohol(0,20)
-    console.log(result)
     setAlcoholList(result)
   })
 
