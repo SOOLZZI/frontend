@@ -1,7 +1,7 @@
 function Logo(){
     return(
         <div className="text-white ml-12 cursor-pointer">
-        SOOLZZI
+        <a href="index">SOOLZZI</a>
         </div>
     )
 }

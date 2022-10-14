@@ -27,7 +27,7 @@ function Header() {
       <Logo />
       <Searchbar />
       <div className="text-2xl text-white grid grid-cols-2 gap-4 items-center list-none m-0 hover:text-gray">
-        <div>로그인</div>
+        <div><a href="Login">로그인</a></div>
         <TiThMenuOutline className="mr-5" size="30" />
       </div>
     </div>
